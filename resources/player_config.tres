@@ -10,4 +10,5 @@ friction = 1000.0
 jump_velocity = -300.0
 coyote_time = 0.15
 jump_buffer_time = 0.18
+ashes_deceleration = 300.0
 metadata/_custom_type_script = "uid://d1qj400vqxtsb"
