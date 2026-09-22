@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://c4nx28bcuan3x"]
+
+[ext_resource type="PackedScene" uid="uid://dijlt6yyvniq" path="res://scenes/hud.tscn" id="1_8uh7m"]
+[ext_resource type="PackedScene" uid="uid://bhw37r1raooa6" path="res://scenes/player.tscn" id="1_37kl0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p4tyq"]
+size = Vector2(449, 41.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8s1sd"]
+size = Vector2(121, 20)
+
+[node name="Test" type="Node2D" unique_id=94645843]
+
+[node name="Hud" parent="." unique_id=1218025222 node_paths=PackedStringArray("flame_system") instance=ExtResource("1_8uh7m")]
+flame_system = NodePath("../Player/FlameSystem")
+
+[node name="Player" parent="." unique_id=1885669628 instance=ExtResource("1_37kl0")]
+position = Vector2(62, 119)
+
+[node name="floor" type="StaticBody2D" parent="." unique_id=745496884]
+
+[node name="ColorRect" type="ColorRect" parent="floor" unique_id=677734039]
+offset_top = 139.0
+offset_right = 449.0
+offset_bottom = 180.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor" unique_id=855586566]
+position = Vector2(224.5, 160)
+shape = SubResource("RectangleShape2D_p4tyq")
+
+[node name="floor2" type="StaticBody2D" parent="." unique_id=1574394417]
+position = Vector2(80, 0)
+
+[node name="ColorRect" type="ColorRect" parent="floor2" unique_id=1970245209]
+offset_left = 439.0
+offset_top = 137.0
+offset_right = 888.0
+offset_bottom = 178.0
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor2" unique_id=1448380696]
+position = Vector2(664, 157)
+shape = SubResource("RectangleShape2D_p4tyq")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2126188315]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=630405949]
+position = Vector2(316, 80)
+shape = SubResource("RectangleShape2D_8s1sd")
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D" unique_id=507705398]
+offset_left = 256.0
+offset_top = 70.0
+offset_right = 376.0
+offset_bottom = 89.0
+
+[editable path="Player"]

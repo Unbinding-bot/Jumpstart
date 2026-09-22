@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://bhw37r1raooa6"]
+
+[ext_resource type="Script" uid="uid://csyjrck8ubtb" path="res://scripts/player.gd" id="1_0e48y"]
+[ext_resource type="Resource" uid="uid://cxyqje02hbfun" path="res://resources/player_config.tres" id="2_g2els"]
+[ext_resource type="Script" uid="uid://c2ovylcwki83i" path="res://scripts/flame_system.gd" id="3_dqkch"]
+[ext_resource type="Resource" uid="uid://dxgmulffm67ep" path="res://resources/flame_config.tres" id="4_qlg0r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8s1sd"]
+size = Vector2(16, 15)
+
+[node name="Player" type="CharacterBody2D" unique_id=1885669628]
+script = ExtResource("1_0e48y")
+config = ExtResource("2_g2els")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=198224054]
+position = Vector2(8, 8.5)
+shape = SubResource("RectangleShape2D_8s1sd")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1395493150]
+offset_right = 16.0
+offset_bottom = 16.0
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=622288807]
+position = Vector2(20, 21)
+position_smoothing_enabled = true
+
+[node name="FlameSystem" type="Node" parent="." unique_id=225761657]
+script = ExtResource("3_dqkch")
+config = ExtResource("4_qlg0r")

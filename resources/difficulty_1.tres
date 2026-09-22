@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="DifficultyConfig" format=3 uid="uid://bnylla61myxmy"]
+
+[ext_resource type="Script" uid="uid://di4bad8havhvr" path="res://scripts/difficulty_config.gd" id="1_r5uru"]
+
+[resource]
+script = ExtResource("1_r5uru")
+metadata/_custom_type_script = "uid://di4bad8havhvr"
