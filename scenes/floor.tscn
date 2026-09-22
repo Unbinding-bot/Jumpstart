@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://d3430nvcqmbe4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8s1sd"]
+
+[node name="Floor" type="StaticBody2D" unique_id=519190003]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=852580220]
+shape = SubResource("RectangleShape2D_8s1sd")
+
+[node name="ColorRect" type="ColorRect" parent="CollisionShape2D" unique_id=772519424]
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0

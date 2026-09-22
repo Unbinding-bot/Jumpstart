@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://do5uh148e4oul"]
+
+[ext_resource type="Script" uid="uid://b3uxqpsf52eqc" path="res://scripts/kill_zone.gd" id="1_xk7ki"]
+
+[node name="KillZone" type="Area2D" unique_id=1121376824]
+script = ExtResource("1_xk7ki")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1374677831]

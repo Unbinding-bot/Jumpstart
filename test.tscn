@@ -1,7 +1,16 @@
 [gd_scene format=3 uid="uid://c4nx28bcuan3x"]
 
-[ext_resource type="PackedScene" uid="uid://dijlt6yyvniq" path="res://scenes/hud.tscn" id="1_8uh7m"]
-[ext_resource type="PackedScene" uid="uid://bhw37r1raooa6" path="res://scenes/player.tscn" id="1_37kl0"]
+[ext_resource type="Script" uid="uid://bqftnbgg2pndi" path="res://scripts/level.gd" id="1_ehkex"]
+[ext_resource type="Resource" uid="uid://bnylla61myxmy" path="res://resources/difficulty_1.tres" id="2_xersf"]
+[ext_resource type="PackedScene" uid="uid://do5uh148e4oul" path="res://scenes/kill_zone.tscn" id="3_00tp4"]
+[ext_resource type="PackedScene" uid="uid://dijlt6yyvniq" path="res://scenes/hud.tscn" id="4_77dp3"]
+[ext_resource type="PackedScene" uid="uid://bhw37r1raooa6" path="res://scenes/player.tscn" id="5_5tkv4"]
+[ext_resource type="PackedScene" uid="uid://cowqi3ycvmc52" path="res://scenes/checkpoint.tscn" id="6_0m0f1"]
+[ext_resource type="PackedScene" uid="uid://cy8dp87glrbr0" path="res://scenes/goal.tscn" id="7_b0q6j"]
+[ext_resource type="PackedScene" uid="uid://dt7deoudf5c4j" path="res://scenes/wind_zone.tscn" id="8_mhym6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q0oov"]
+size = Vector2(71, 30)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p4tyq"]
 size = Vector2(449, 41.5)
@@ -10,11 +19,20 @@ size = Vector2(449, 41.5)
 size = Vector2(121, 20)
 
 [node name="Test" type="Node2D" unique_id=94645843]
+script = ExtResource("1_ehkex")
+difficulty = ExtResource("2_xersf")
 
-[node name="Hud" parent="." unique_id=1218025222 node_paths=PackedStringArray("flame_system") instance=ExtResource("1_8uh7m")]
+[node name="KillZone" parent="." unique_id=1121376824 instance=ExtResource("3_00tp4")]
+position = Vector2(0, -52)
+
+[node name="CollisionShape2D" parent="KillZone" index="0" unique_id=1374677831]
+position = Vector2(485, 216)
+shape = SubResource("RectangleShape2D_q0oov")
+
+[node name="Hud" parent="." unique_id=1218025222 node_paths=PackedStringArray("flame_system") instance=ExtResource("4_77dp3")]
 flame_system = NodePath("../Player/FlameSystem")
 
-[node name="Player" parent="." unique_id=1885669628 instance=ExtResource("1_37kl0")]
+[node name="Player" parent="." unique_id=1885669628 instance=ExtResource("5_5tkv4")]
 position = Vector2(62, 119)
 
 [node name="floor" type="StaticBody2D" parent="." unique_id=745496884]
@@ -25,6 +43,30 @@ offset_right = 449.0
 offset_bottom = 180.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="floor" unique_id=855586566]
+position = Vector2(224.5, 160)
+shape = SubResource("RectangleShape2D_p4tyq")
+
+[node name="floor3" type="StaticBody2D" parent="." unique_id=1519017197]
+position = Vector2(-431, 0)
+
+[node name="ColorRect" type="ColorRect" parent="floor3" unique_id=1045760018]
+offset_top = 139.0
+offset_right = 449.0
+offset_bottom = 180.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor3" unique_id=340641975]
+position = Vector2(224.5, 160)
+shape = SubResource("RectangleShape2D_p4tyq")
+
+[node name="floor4" type="StaticBody2D" parent="." unique_id=1900132689]
+position = Vector2(-862, 0)
+
+[node name="ColorRect" type="ColorRect" parent="floor4" unique_id=1341291825]
+offset_top = 139.0
+offset_right = 449.0
+offset_bottom = 180.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor4" unique_id=301113447]
 position = Vector2(224.5, 160)
 shape = SubResource("RectangleShape2D_p4tyq")
 
@@ -54,4 +96,28 @@ offset_top = 70.0
 offset_right = 376.0
 offset_bottom = 89.0
 
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=1348575039]
+position = Vector2(-783, -212)
+rotation = 1.577658
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=2098185002]
+position = Vector2(316, 80)
+shape = SubResource("RectangleShape2D_8s1sd")
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D2" unique_id=14953762]
+offset_left = 256.0
+offset_top = 70.0
+offset_right = 376.0
+offset_bottom = 89.0
+
+[node name="Checkpoint" parent="." unique_id=551312383 instance=ExtResource("6_0m0f1")]
+position = Vector2(343, 44)
+
+[node name="Goal" parent="." unique_id=378507224 instance=ExtResource("7_b0q6j")]
+position = Vector2(949, 117)
+
+[node name="WindZone" parent="." unique_id=924534519 instance=ExtResource("8_mhym6")]
+position = Vector2(-861, 118)
+
+[editable path="KillZone"]
 [editable path="Player"]

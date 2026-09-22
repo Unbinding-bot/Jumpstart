@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://dt7deoudf5c4j"]
+
+[ext_resource type="Script" uid="uid://ylxuajhmt74q" path="res://scripts/wind_zone.gd" id="1_xncwx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xncwx"]
+size = Vector2(48, 487)
+
+[node name="WindZone" type="Area2D" unique_id=924534519]
+position = Vector2(0, 106)
+rotation = 1.5707964
+script = ExtResource("1_xncwx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2125562426]
+position = Vector2(8.3434315e-08, -242.5)
+shape = SubResource("RectangleShape2D_xncwx")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=1919829025]
+amount = 32
+randomness = 0.3
+emission_shape = 3
+emission_rect_extents = Vector2(24, 1)
+gravity = Vector2(980, 0)
+scale_amount_max = 5.0

@@ -4,6 +4,6 @@
 
 [resource]
 script = ExtResource("1_vbug2")
-base_drain = 0.3
+base_drain = 0.5
 fall_drain_amount = 3.0
 metadata/_custom_type_script = "uid://mnwktd3xecid"

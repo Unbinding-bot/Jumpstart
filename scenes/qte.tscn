@@ -1,0 +1,96 @@
+[gd_scene format=3 uid="uid://djgl61aah4e2r"]
+
+[ext_resource type="Script" uid="uid://ceiy0bs4xm3cl" path="res://scripts/qte.gd" id="1_tmbk4"]
+
+[node name="Qte" type="CanvasLayer" unique_id=1998129050]
+script = ExtResource("1_tmbk4")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=592936944]
+offset_right = 320.0
+offset_bottom = 180.0
+color = Color(0.17450827, 2.1189564e-05, 0.17450678, 1)
+
+[node name="Bar" type="ColorRect" parent="." unique_id=415528798]
+unique_name_in_owner = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 119.0
+offset_top = -70.0
+offset_right = 131.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Zone" type="ColorRect" parent="Bar" unique_id=1048242760]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -5.0
+offset_top = -20.0
+offset_right = 5.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.6666667)
+
+[node name="Marker" type="ColorRect" parent="Bar" unique_id=487335640]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -5.0
+offset_top = -12.0
+offset_right = 5.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.12526307, 0.45595247, 0, 1)
+
+[node name="TimerTrack" type="ColorRect" parent="." unique_id=174362242]
+unique_name_in_owner = true
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -60.0
+offset_top = -36.0
+offset_right = 60.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0, 0, 0, 1)
+
+[node name="TimerFill" type="ColorRect" parent="TimerTrack" unique_id=1691885960]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -59.0
+offset_top = -5.0
+offset_right = 59.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.38928655, 0.38928664, 0.38928658, 1)
+
+[node name="HitsLabel" type="Label" parent="." unique_id=978047628]
+unique_name_in_owner = true
+offset_left = 8.0
+offset_top = 15.0
+offset_right = 48.0
+offset_bottom = 38.0
